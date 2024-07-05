@@ -57,15 +57,18 @@ python fields.py
 
 4. Config  
    4a. Basic usage  
-   4b. Configuration in the BaseModel in Smarter 4c. Tariff Common  
-   4d. alias_generator  
-   4e. arbitrary_types_allowed  
-   4f. extra  
-   4g. frozen  
-   4h. populate_by_name  
-   4i. validate_assignment
+   4b. Configuration in the BaseModel in Smarter Tariff Common  
+   alias_generator  
+   arbitrary_types_allowed  
+   extra  
+   frozen  
+   populate_by_name  
+   validate_assignment
 
-5. Parsing
+5. Parsing  
+   5a. Data coercion: lax mode
+   5b. strict mode
+
 6. Validation
 7. Serialisation
 8. Json Schema
