@@ -58,17 +58,18 @@ python fields.py
 4. Config  
    4a. Basic usage  
    4b. Configuration in the BaseModel in Smarter Tariff Common  
-   alias_generator  
-   arbitrary_types_allowed  
-   extra  
-   frozen  
-   populate_by_name  
-   validate_assignment
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alias_generator  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arbitrary_types_allowed  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extra  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frozen  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populate_by_name  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validate_assignment
 
 5. Parsing  
-   5a. Data coercion: lax mode
+   5a. Data coercion: lax mode  
    5b. strict mode
 
 6. Validation
 7. Serialisation
 8. Json Schema
+9. Dataclasses
