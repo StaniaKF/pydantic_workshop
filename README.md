@@ -69,7 +69,10 @@ python fields.py
    5a. Data coercion: lax mode  
    5b. strict mode
 
-6. Validation
+6. Validation  
+   6a. Validation methods  
+   6b. Pydantic types
+
 7. Serialisation
 8. Json Schema
 9. Dataclasses
