@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 import pprint
-from pydantic import BaseModel, Field, InstanceOf, PastDate, PastDatetime, ValidationError, conlist
+from pydantic import BaseModel, Field, InstanceOf, PastDate, PastDatetime, SkipValidation, ValidationError, conlist
 
 class MyModel(BaseModel):
     my_date: PastDatetime
@@ -75,3 +75,11 @@ try:
     print(DogCompetition(dogs=dogs))
 except ValidationError as e:
     pprint.pp(e.errors())  # Input should be a dictionary or an instance of Dog
+
+print("\n--- SkipValidation ---")
+# SkipValidation can be used to skip validation on a field
+
+class DogCompetition(BaseModel):
+    dogs: list[SkipValidation[Dog]]
+
+print(DogCompetition(dogs=dogs))

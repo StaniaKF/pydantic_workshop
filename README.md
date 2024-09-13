@@ -72,6 +72,7 @@ python fields.py
 6. Validation  
    6a. Validation methods  
    6b. Pydantic types
+   6c. Field validator (+ the ValidationInfo object, mode - before, after)
 
 7. Serialisation
 8. Json Schema
