@@ -5,7 +5,7 @@ import pprint
 from typing import Any
 from pydantic import BaseModel, ValidationError, field_validator
 
-
+# DOCUMENTATION: https://docs.pydantic.dev/2.9/concepts/validators/#before-after-wrap-and-plain-validators
 print("--- Mode after ---")
 
 class MyModel(BaseModel):
@@ -95,7 +95,23 @@ try:
     my_model =MyModel(**external_data)
 except ValidationError as e:
     pprint.pp(e.errors())
-    
 
 
+print("\n--- Mode plain ---")
+### plain validators terminate validation immediately, no further validators are called 
 
+class MyModel(BaseModel):
+    my_int: int 
+    my_str: str
+
+    @field_validator("my_int", mode="plain")
+    @classmethod
+    def validate_even_number(cls, value: Any) -> Any:    
+        print(f"Validator that does not error, {type(value)}")
+        return value
+
+external_data = {"my_int": "123", "my_str": "abc"}
+
+my_model =MyModel(**external_data)
+print(my_model) 
+print(type(my_model.my_int))

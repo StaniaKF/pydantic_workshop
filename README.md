@@ -58,12 +58,12 @@ python fields.py
 4. Config  
    4a. Basic usage  
    4b. Configuration in the BaseModel in Smarter Tariff Common  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alias_generator  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arbitrary_types_allowed  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extra  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frozen  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populate_by_name  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validate_assignment
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alias_generator  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arbitrary_types_allowed  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extra  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frozen  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;populate_by_name  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validate_assignment
 
 5. Parsing  
    5a. Data coercion: lax mode  
@@ -72,7 +72,10 @@ python fields.py
 6. Validation  
    6a. Validation methods  
    6b. Pydantic types
-   6c. Field validator (+ the ValidationInfo object, mode - before, after)
+   6c. Field validator (+ the ValidationInfo object, mode - before, after, plain)
+   6d. Field validator reuse
+   6e. Validation alias
+   6f. Annotated validators
 
 7. Serialisation
 8. Json Schema
