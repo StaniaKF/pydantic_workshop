@@ -1,0 +1,59 @@
+from pydantic import BaseModel, ValidationError, model_validator
+from typing import Self
+
+from pydantic_core import PydanticCustomError
+
+# DOCUMENTATION: https://docs.pydantic.dev/latest/concepts/validators/#handling-errors-in-validators
+print("--- Handling errors in validators ---")
+# in your validators you can raise either a ValueError or an AssertionError 
+# but other errors like a TypeError will not be wrapped in a ValidationError
+
+class MyModel(BaseModel):
+    my_float_1: float
+    my_float_2: float
+
+    @model_validator(mode="after")
+    def validate_floats(self) -> Self:
+        if self.my_float_1 <= self.my_float_2:
+            raise ValueError("my_float_1 must be larger than my_float_2")
+        return self
+
+external_data = {"my_float_1": "123", "my_float_2": "235"}
+try:
+    MyModel(**external_data)
+except ValidationError as e:
+    print(e.errors())
+
+
+class MyModel(BaseModel):
+    my_float_1: float
+    my_float_2: float
+
+    @model_validator(mode="after")
+    def validate_floats(self) -> Self:
+        if self.my_float_1 <= self.my_float_2:
+            raise TypeError("my_float_1 must be larger than my_float_2")
+        return self
+
+external_data = {"my_float_1": "123", "my_float_2": "235"}
+try:
+    MyModel(**external_data)
+except TypeError as e:
+    print(e)
+
+
+class MyModel(BaseModel):
+    my_float_1: float
+    my_float_2: float
+
+    @model_validator(mode="after")
+    def validate_floats(self) -> Self:
+        if self.my_float_1 <= self.my_float_2:
+            raise PydanticCustomError("TypeError", "my_float_1 must be larger than my_float_2")
+        return self
+
+external_data = {"my_float_1": "123", "my_float_2": "235"}
+try:
+    MyModel(**external_data)
+except ValidationError as e:
+    print(e.errors()) # [{'type': 'TypeError', 'loc': (), 'msg': 'my_float_1 must be larger than my_float_2', 'input': {'my_float_1': '135', 'my_float_2': '235'}}]
