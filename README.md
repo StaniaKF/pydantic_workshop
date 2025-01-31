@@ -71,14 +71,18 @@ python fields.py
 
 6. Validation  
    6a. Validation methods  
-   6b. Pydantic types
+   6b. Pydantic types  
    6c. Field validator (+ the ValidationInfo object, mode - before, after, plain)  
    6d. Field validator reuse  
    6e. Validation alias  
    6f. Annotated validators  
    6g. Model validator  
-   6h. Error handling
+   6h. Error handling  
+   6i. Validation context  
+   6j. Dataclass validation
 
-7. Serialisation
+7. Serialisation  
+   7a. model_dump  
+   7b. model_dump_json
 8. Custom types
 9. Dataclasses
