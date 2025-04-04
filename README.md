@@ -84,5 +84,7 @@ python fields.py
 7. Serialisation  
    7a. model_dump  
    7b. model_dump_json
+   7c. dict
+   7d. Custom serialisers
 8. Custom types
 9. Dataclasses
